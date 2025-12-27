@@ -13,26 +13,26 @@ use serde::{Deserialize, Serialize};
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum TokenHintType {
-    #[serde(rename = "access_token")]
-    AccessToken,
-    #[serde(rename = "refresh_token")]
-    RefreshToken,
+pub enum ProductType {
+    #[serde(rename = "product")]
+    Product,
+    #[serde(rename = "subscription")]
+    Subscription,
 
 }
 
-impl std::fmt::Display for TokenHintType {
+impl std::fmt::Display for ProductType {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::AccessToken => write!(f, "access_token"),
-            Self::RefreshToken => write!(f, "refresh_token"),
+            Self::Product => write!(f, "product"),
+            Self::Subscription => write!(f, "subscription"),
         }
     }
 }
 
-impl Default for TokenHintType {
-    fn default() -> TokenHintType {
-        Self::AccessToken
+impl Default for ProductType {
+    fn default() -> ProductType {
+        Self::Product
     }
 }
 

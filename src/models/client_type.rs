@@ -13,26 +13,29 @@ use serde::{Deserialize, Serialize};
 
 /// 
 #[derive(Clone, Copy, Debug, Eq, PartialEq, Ord, PartialOrd, Hash, Serialize, Deserialize)]
-pub enum TokenHintType {
-    #[serde(rename = "access_token")]
-    AccessToken,
-    #[serde(rename = "refresh_token")]
-    RefreshToken,
+pub enum ClientType {
+    #[serde(rename = "web")]
+    Web,
+    #[serde(rename = "desktop")]
+    Desktop,
+    #[serde(rename = "mobile")]
+    Mobile,
 
 }
 
-impl std::fmt::Display for TokenHintType {
+impl std::fmt::Display for ClientType {
     fn fmt(&self, f: &mut std::fmt::Formatter) -> std::fmt::Result {
         match self {
-            Self::AccessToken => write!(f, "access_token"),
-            Self::RefreshToken => write!(f, "refresh_token"),
+            Self::Web => write!(f, "web"),
+            Self::Desktop => write!(f, "desktop"),
+            Self::Mobile => write!(f, "mobile"),
         }
     }
 }
 
-impl Default for TokenHintType {
-    fn default() -> TokenHintType {
-        Self::AccessToken
+impl Default for ClientType {
+    fn default() -> ClientType {
+        Self::Web
     }
 }
 

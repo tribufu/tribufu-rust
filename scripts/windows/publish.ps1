@@ -1,9 +1,11 @@
 #!/usr/bin/env pwsh
 
 $crates = @(
-    "tribufu-types",
     "tribufu-constants",
-    "tribufu-api",
+    "tribufu-error",
+    "tribufu-json",
+    "tribufu-log",
+    "tribufu-platform",
     "tribufu"
 )
 

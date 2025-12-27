@@ -1,11 +1,12 @@
 [package]
 name = "tribufu-log"
-version = "0.0.5"
+version = "1.3.0"
 description = "Tribufu Log"
 repository = "https://github.com/tribufu/tribufu-rust"
 authors = ["Tribufu <contact@tribufu.com>"]
+license = "MIT"
 edition = "2021"
-publish = false
+publish = true
 
 [lib]
 name = "tribufu_log"
@@ -13,7 +14,7 @@ crate-type = ["rlib"]
 path = "lib.rs"
 
 [dependencies]
-tribufu-error = { version = "0.0.5", path = "../error" }
+tribufu-error = { version = "1.3.0", path = "../error" }
 chrono = "0.4.23"
 env_logger = "0.10.1"
 log = "0.4"
