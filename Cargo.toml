@@ -19,6 +19,7 @@ exclude = [
     ".vscode/",
     "examples/",
     "scripts/",
+    "vendor/",
 ]
 
 [workspace]
