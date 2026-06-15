@@ -1,7 +1,6 @@
 src/apis/configuration.rs
 src/apis/mod.rs
 src/apis/tribufu_generated_api.rs
-src/models/account.rs
 src/models/application.rs
 src/models/application_type.rs
 src/models/authorize_request.rs
@@ -12,6 +11,7 @@ src/models/code_challenge_method.rs
 src/models/code_response.rs
 src/models/create_user.rs
 src/models/crypto_view_model.rs
+src/models/external_account.rs
 src/models/game.rs
 src/models/game_server.rs
 src/models/game_server_cluster.rs
@@ -23,12 +23,12 @@ src/models/group_application.rs
 src/models/group_member.rs
 src/models/group_rank.rs
 src/models/hash_view_model.rs
+src/models/identity_provider_type.rs
 src/models/introspect_request.rs
 src/models/introspect_response.rs
 src/models/ip_address.rs
 src/models/leaderboard_item.rs
 src/models/leaderboard_order.rs
-src/models/login_provider.rs
 src/models/mod.rs
 src/models/package.rs
 src/models/package_release.rs
