@@ -4,12 +4,14 @@
 #![allow(unused_imports)]
 #![allow(clippy::too_many_arguments)]
 
+pub use crate::apis::tribufu_generated_api::TribufuGeneratedApi;
+
 use crate::apis::configuration::{ApiKey, Configuration};
 use crate::apis::tribufu_generated_api::TribufuGeneratedApiClient;
 use reqwest::Client;
-use tribufu_constants::{RUSTC_VERSION, TARGET_TRIPLE};
 use std::env::{self, consts};
 use std::sync::Arc;
+use tribufu_constants::{RUSTC_VERSION, TARGET_TRIPLE};
 
 pub mod apis;
 pub mod models;
@@ -69,7 +71,10 @@ impl TribufuApi {
     /// Gets the user agent string for the Tribufu API client.
     pub fn get_user_agent() -> String {
         let version = Self::get_version();
-        format!("Tribufu/{} (Rust {}; {})", version, RUSTC_VERSION, TARGET_TRIPLE)
+        format!(
+            "Tribufu/{} (Rust {}; {})",
+            version, RUSTC_VERSION, TARGET_TRIPLE
+        )
     }
 
     /// Checks if debug mode is enabled.

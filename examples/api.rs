@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 
 use dotenv::dotenv;
-use tribufu::apis::tribufu_generated_api::TribufuGeneratedApi;
 use tribufu::TribufuApi;
+use tribufu::TribufuGeneratedApi;
 
 #[tokio::main]
 async fn main() {
