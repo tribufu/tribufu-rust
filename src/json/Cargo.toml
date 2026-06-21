@@ -2,7 +2,7 @@
 name = "tribufu-json"
 version = "1.3.0"
 description = "Tribufu Json"
-repository = "https://github.com/tribufu/tribufu-rust"
+repository = "https://github.com/Tribufu/TribufuRust"
 authors = ["Tribufu <contact@tribufu.com>"]
 license = "MIT"
 edition = "2021"
