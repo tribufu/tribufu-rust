@@ -1,5 +1,5 @@
 [package]
-name = "tribufu"
+name = "tribufu-sdk"
 version = "1.3.0"
 description = "REST API to access Tribufu services."
 repository = "https://github.com/Tribufu/TribufuRust"
@@ -7,6 +7,7 @@ authors = ["Tribufu <contact@tribufu.com>"]
 license = "MIT"
 readme = "README.md"
 edition = "2021"
+rust-version = "1.88"
 publish = true
 
 exclude = [
@@ -23,9 +24,8 @@ exclude = [
 ]
 
 [workspace]
-resolver = "2"
-members = ["src/*"]
-exclude = ["src/apis", "src/models"]
+resolver = "3"
+members = ["."]
 
 [lib]
 name = "tribufu"
@@ -33,9 +33,8 @@ crate-type = ["rlib"]
 path = "src/lib.rs"
 
 [dependencies]
-tribufu-constants = { version = "1.3.0", path = "./src/constants" }
 async-trait = "^0.1"
-reqwest = { version = "^0.12", features = ["json", "multipart"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["json", "multipart", "query", "form", "native-tls"] }
 serde = { version = "^1.0", features = ["derive"] }
 serde_json = "^1.0"
 serde_repr = "^0.1"
@@ -48,5 +47,4 @@ url = "^2.5"
 uuid = { version = "^1.8", features = ["serde", "v4"] }
 
 [dev-dependencies]
-dotenv = "0.15.0"
 tokio = { version = "1.45.1", features = ["full"] }

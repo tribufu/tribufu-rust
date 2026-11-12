@@ -1,13 +1,10 @@
 # Tribufu Rust
 
-Rust SDK to access Tribufu APIs and services.
+Open source Rust SDK for the public Tribufu API at `https://api.tribufu.com`.
 
-[![Crates.io][crates-badge]][crates-url]
 [![MIT License][mit-badge]][mit-url]
 [![Discord Chat][discord-badge]][discord-url]
 
-[crates-badge]: https://img.shields.io/crates/v/tribufu.svg
-[crates-url]: https://crates.io/crates/tribufu
 [mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [mit-url]: https://github.com/Tribufu/TribufuRust/blob/main/LICENSE.txt
 [discord-badge]: https://img.shields.io/discord/276504514616623104.svg?logo=discord&style=flat-square
@@ -15,6 +12,19 @@ Rust SDK to access Tribufu APIs and services.
 
 [Website](https://www.tribufu.com) |
 [Discord](https://www.tribufu.com/discord)
+
+## Development
+
+Use Rust 1.88 or newer. The Cargo package is `tribufu-sdk`; the library is imported as `tribufu`.
+
+```sh
+cargo build --workspace
+cargo test --workspace
+```
+
+Generate bindings from the public API with `./scripts/windows/generate.ps1`. Its default schema is
+`https://api.tribufu.com/openapi.json`; `-Spec <path-or-url>` selects another OpenAPI document.
+`./scripts/windows/publish.ps1` publishes the `tribufu-sdk` package.
 
 ## License
 

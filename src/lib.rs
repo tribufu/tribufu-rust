@@ -8,10 +8,8 @@ pub use crate::apis::tribufu_generated_api::TribufuGeneratedApi;
 
 use crate::apis::configuration::{ApiKey, Configuration};
 use crate::apis::tribufu_generated_api::TribufuGeneratedApiClient;
-use reqwest::Client;
-use std::env::{self, consts};
+use std::env;
 use std::sync::Arc;
-use tribufu_constants::{RUSTC_VERSION, TARGET_TRIPLE};
 
 pub mod apis;
 pub mod models;
@@ -72,8 +70,10 @@ impl TribufuApi {
     pub fn get_user_agent() -> String {
         let version = Self::get_version();
         format!(
-            "Tribufu/{} (Rust {}; {})",
-            version, RUSTC_VERSION, TARGET_TRIPLE
+            "Tribufu/{} (Rust; {}; {})",
+            version,
+            env::consts::OS,
+            env::consts::ARCH
         )
     }
 
@@ -113,5 +113,18 @@ impl TribufuApi {
             api_key: api_key_obj,
             ..Default::default()
         }
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn generated_configuration_uses_the_public_api() {
+        assert_eq!(
+            Configuration::default().base_path,
+            TribufuApi::DEFAULT_BASE_URL
+        );
     }
 }
